@@ -1,0 +1,58 @@
+.topbar-wrapper {
+  display: flex;
+  height: 75px;
+  width: 100%;
+  gap: 30px;
+  align-items: center;
+  padding: 0 300px;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topbar-user-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-user-icon {
+  height: 55px;
+  width: 55px;
+  background: white;
+  border-radius: 100%;
+  border: 2px solid rgb(190, 187, 26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(16, 10, 62);
+  cursor: pointer;
+  user-select: none;
+}
+
+.topbar-user-name {
+}
+
+.topbar-menu-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.topbar-item-wrapper {
+  padding: 3px;
+  border-bottom: 2px solid transparent;
+  border-radius: 3px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fafafa;
+}
+.topbar-item-wrapper:hover {
+  border-bottom: 2px solid rgba(255, 0, 0, 1);
+  transform: scale(1.1);
+}
+
+.topbar-contact-wrapper {
+  display: flex;
+  gap: 10px;
+}
