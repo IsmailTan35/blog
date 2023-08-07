@@ -8,6 +8,11 @@
   justify-content: space-around;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background: black;
+  z-index: 100;
+  box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 .topbar-user-wrapper {
@@ -28,6 +33,7 @@
   color: rgb(16, 10, 62);
   cursor: pointer;
   user-select: none;
+  transform: rotate(-45deg);
 }
 
 .topbar-user-name {
@@ -55,4 +61,19 @@
 .topbar-contact-wrapper {
   display: flex;
   gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .topbar-wrapper {
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+  .topbar-menu-wrapper {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .topbar-wrapper {
+    padding: 0 25px;
+  }
 }

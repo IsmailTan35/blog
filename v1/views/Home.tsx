@@ -1,8 +1,9 @@
+import Image from "next/image";
 import React from "react";
 
 const Home = () => {
-  const calculateDate = () => {
-    const start = new Date(2000, 1).getFullYear();
+  const calculateDate = (date: number) => {
+    const start = new Date(date, 1).getFullYear();
     const end = new Date().getFullYear();
 
     const diff = end - start;
@@ -21,15 +22,24 @@ const Home = () => {
             </div>
           </div>
           <div className="home-content">
-            I'm {calculateDate()} years old. I can clean code and pixel perfect
-            design. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Blanditiis quia odio quam, modi, placeat aut eos, tempore natus sed
-            debitis optio excepturi nostrum minima? A expedita dicta
-            voluptatibus odio nobis.
+            Greetings, I am a {calculateDate(2000)} year old professional with
+            nearly {calculateDate(2020)} years of dedicated experience in web
+            project development. Throughout my journey, I have been committed to
+            crafting applications with utmost precision, adhering to the Atomic
+            architecture. My expertise spans a wide array of technologies,
+            including HTML, CSS, JavaScript, Typescript, React, Node.js, and
+            Express.js.
           </div>
         </div>
         <div className="home-picture-wrapper">
-          <div className="home-picture"></div>
+          <div className="home-picture">
+            <Image
+              src="/image/myPicture.jpg"
+              alt="İsmail Tan"
+              width={500}
+              height={500}
+            />
+          </div>
         </div>
       </div>
     </div>
