@@ -4,6 +4,7 @@ import Contact from "./views/Contact";
 import Education from "./views/Education";
 import HomeView from "./views/Home";
 import Skills from "./views/Skills";
+import Projects from "./views/Projects";
 
 const V1 = () => {
   return (
@@ -13,6 +14,7 @@ const V1 = () => {
         <div className="container">
           <HomeView />
           <Skills />
+          <Projects />
         </div>
       </div>
     </>

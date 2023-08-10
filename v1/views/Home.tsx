@@ -11,7 +11,7 @@ const Home = () => {
     return diff;
   };
   return (
-    <div className="home-wrapper">
+    <div className="home-wrapper" id="Home">
       <div className="home">
         <div className="home-content-wrapper">
           <div className="home-header-wrapper">

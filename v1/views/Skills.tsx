@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "../../image/SliderSvg";
 
 const skillGroups = [
@@ -28,7 +28,7 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <div className="skills-wrapper view-wrapper">
+    <div className="skills-wrapper view-wrapper" id="Skills">
       <div className="skills-header-wrapper">Skills</div>
       <div
         className="skills"
@@ -40,12 +40,7 @@ const Skills = () => {
       >
         {skillGroups.map((skillGroup, idx) => {
           return (
-            <div
-              key={idx}
-              style={{
-                marginBottom: 150,
-              }}
-            >
+            <div key={idx}>
               <div
                 style={{
                   fontSize: 25,

@@ -31,6 +31,21 @@ const links = [
   },
 ];
 
+const menuItems = [
+  {
+    text: "Home",
+    link: "/#Home",
+  },
+  {
+    text: "Skills",
+    link: "/#Skills",
+  },
+  {
+    text: "Projects",
+    link: "/#Projects",
+  },
+];
+
 const Topbar = () => {
   function openAppOrWeb(link: any) {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -49,9 +64,11 @@ const Topbar = () => {
         <div className="topbar-user-icon">TİSO</div>
       </div>
       <div className="topbar-menu-wrapper">
-        <div className="topbar-item-wrapper">HOME</div>
-        <div className="topbar-item-wrapper">SKILLS</div>
-        <div className="topbar-item-wrapper">EXPERIENCE</div>
+        {menuItems.map((item, idx) => (
+          <div className="topbar-item-wrapper" key={idx}>
+            <a href={item.link}>{item.text}</a>
+          </div>
+        ))}
       </div>
       <div className="topbar-contact-wrapper">
         {links.map((link, idx) => (

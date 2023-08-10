@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 50px;
+  scroll-margin-top: 50px;
 }
 .home {
   display: flex;
