@@ -2,7 +2,7 @@ import type { IconType } from "react-icons";
 import { FaChessKnight, FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { GiTank } from "react-icons/gi";
 import {
-  SiCss3,
+  SiCss,
   SiDiscord,
   SiDocker,
   SiExpress,
@@ -24,7 +24,7 @@ interface BrandIcon {
 
 export const techIcons: Record<string, BrandIcon> = {
   HTML: { icon: SiHtml5, color: "#e34f26" },
-  CSS: { icon: SiCss3, color: "#2965f1" },
+  CSS: { icon: SiCss, color: "#2965f1" },
   JavaScript: { icon: SiJavascript, color: "#f7df1e" },
   TypeScript: { icon: SiTypescript, color: "#3178c6" },
   React: { icon: SiReact, color: "#61dafb" },

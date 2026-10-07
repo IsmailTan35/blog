@@ -82,7 +82,7 @@ const Topbar = () => {
     <header className={wrapperClassName}>
       <div className="topbar container">
         <a href="#Home" className="topbar-logo" aria-label="İsmail Tan, back to top">
-          <span>TİSO</span>
+          TİSO
         </a>
 
         <nav className="topbar-menu" aria-label="Main">

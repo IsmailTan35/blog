@@ -64,6 +64,8 @@ a {
 
 .main-wrapper {
   position: relative;
+  /* Keeps the z-index: -1 background above the body's own background. */
+  isolation: isolate;
   min-height: 100vh;
   font-family: var(--font-body);
   line-height: 1.6;
