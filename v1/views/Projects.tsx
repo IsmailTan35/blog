@@ -1,86 +1,59 @@
-import React from "react";
+import React, { CSSProperties, MouseEvent } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
+import { projectIcons } from "../components/icons";
+import Reveal from "../components/reveal";
+import SectionHeader from "../components/sectionHeader";
+import { projects } from "../data";
 
-const myProjects = [
-  {
-    name: "Discord Clone",
-    url: "https://discordclone.ismailtan.dev",
-    description: "Discord Clone",
-  },
-  {
-    name: "Chess 3D",
-    url: "https://chess3d.ismailtan.dev",
-    description: "Chess 3D",
-  },
-  {
-    name: "Multiplayer Tank War Game",
-    url: "https://waroftanks.ismailtan.dev",
-    description: "Multiplayer Tank War Game",
-  },
-];
+// Moves the card's glow to follow the cursor.
+const onCardMouseMove = (event: MouseEvent<HTMLAnchorElement>) => {
+  const rect = event.currentTarget.getBoundingClientRect();
+  event.currentTarget.style.setProperty("--x", `${event.clientX - rect.left}px`);
+  event.currentTarget.style.setProperty("--y", `${event.clientY - rect.top}px`);
+};
 
 const Projects = () => {
   return (
-    <>
-      <div className="skills-wrapper view-wrapper" id="Projects">
-        <div className="skills-header-wrapper">Projects</div>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 30,
-              textAlign: "center",
-            }}
-          >
-            {myProjects.map((project, index) => (
-              <div key={index}>
-                <div
-                  style={{
-                    fontSize: 25,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 10,
-                  }}
+    <section className="section" id="Projects">
+      <div className="container">
+        <SectionHeader
+          index="02"
+          eyebrow="Projects"
+          title="Things I've shipped"
+          subtitle="A few projects that are live right now. Open any of them and try it out."
+        />
+        <div className="projects-grid">
+          {projects.map((project, idx) => {
+            const { icon: Icon, color } = projectIcons[project.name];
+            return (
+              <Reveal key={project.name} delay={idx * 120}>
+                <a
+                  className="project-card"
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  onMouseMove={onCardMouseMove}
+                  style={{ "--project-color": color } as CSSProperties}
                 >
-                  {project.name}
-                </div>
-                <div
-                  style={{
-                    borderRadius: 10,
-                    padding: 10,
-                    backgroundColor: "#f5f5f5",
-                    fontSize: 20,
-                    color: "#000000",
-                  }}
-                >
-                  <a
-                    target="_blank"
-                    href={project.url}
-                    rel="noreferrer"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      textDecoration: "none",
-                      userSelect: "none",
-                    }}
-                  >
-                    {project.url}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+                  <div className="project-preview">
+                    <Icon className="project-preview-icon" />
+                  </div>
+                  <div className="project-body">
+                    <span className="project-number">0{idx + 1}</span>
+                    <h3 className="project-name">{project.name}</h3>
+                    <p className="project-description">{project.description}</p>
+                  </div>
+                  <span className="project-link">
+                    {new URL(project.url).host}
+                    <FiArrowUpRight className="project-link-arrow" />
+                  </span>
+                </a>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
